@@ -4,13 +4,19 @@ import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../componets/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../componets/StyledButton/AnimatedBackground/AnimatedBackground";
+
 const Hero = () => {
 
     const StyledHero = styled("div")(({theme})=>({
         backgroundColor: theme.palette.primary.main,
         height:"100vh",
         display:"flex",
-        alignItems:"center"
+        alignItems:"center",
+        [theme.breakpoints.up('xs')]: { // <= mobile
+            paddingTop:"100px",
+        },
+        [theme.breakpoints.up('md')]: { // >= mobile
+            paddingTop:"0",
     }))
 
     const Styledimg = styled("img")(({theme})=>({
